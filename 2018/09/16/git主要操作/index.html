@@ -5,19 +5,32 @@
   
 
   
-  <title>&#39;git_mannual&#39; | Hexo</title>
+  <title>git主要操作 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="git常用命令及使用方法 作为一名计算机相关的人士，如果不知道git为何物，那就有些不应该了。Git是目前世界上最先进的分布式版本控制系统（没有之一）。它和其他版本控制系统的主要差别在于Git只关心文件数据的整体是否发生变化，而大多数版本其他系统只关心文件内容的具体差异，这类系统（CVS，Subversion，Perforce，Bazaar 等等）每次记录有哪些文件作了更新，以及都更新了哪些行的什">
+  <meta name="description" content="git常用命令及使用方法    作为一名计算机相关的人士，如果不知道git为何物，那就有些不应该了。Git是目前世界上最先进的分布式版本控制系统（没有之一）。它和其他版本控制系统的主要差别在于Git只关心文件数据的整体是否发生变化，而大多数版本其他系统只关心文件内容的具体差异，这类系统（CVS，Subversion，Perforce，Bazaar 等等）每次记录有哪些文件作了更新，以及都更新了哪些">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&#39;git_mannual&#39;">
-<meta property="og:url" content="http://yoursite.com/2018/09/16/git-mannual/index.html">
+<meta property="og:title" content="git主要操作">
+<meta property="og:url" content="http://yoursite.com/2018/09/16/git主要操作/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="git常用命令及使用方法 作为一名计算机相关的人士，如果不知道git为何物，那就有些不应该了。Git是目前世界上最先进的分布式版本控制系统（没有之一）。它和其他版本控制系统的主要差别在于Git只关心文件数据的整体是否发生变化，而大多数版本其他系统只关心文件内容的具体差异，这类系统（CVS，Subversion，Perforce，Bazaar 等等）每次记录有哪些文件作了更新，以及都更新了哪些行的什">
+<meta property="og:description" content="git常用命令及使用方法    作为一名计算机相关的人士，如果不知道git为何物，那就有些不应该了。Git是目前世界上最先进的分布式版本控制系统（没有之一）。它和其他版本控制系统的主要差别在于Git只关心文件数据的整体是否发生变化，而大多数版本其他系统只关心文件内容的具体差异，这类系统（CVS，Subversion，Perforce，Bazaar 等等）每次记录有哪些文件作了更新，以及都更新了哪些">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-16T03:16:30.823Z">
+<meta property="og:image" content="https://i.loli.net/2018/09/16/5b9e5df92ca84.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/16/5b9e5e85a869b.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/16/5b9e5f6473174.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/16/5b9e6003836ee.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/16/5b9e6361b9a9f.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/16/5b9e638d0df99.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/16/5b9e63fb8cec0.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/16/5b9e65c1ade82.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/16/5b9e66fdb2814.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/16/5b9e673353d88.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/16/5b9e6968cf458.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/16/5b9e699cdfbf0.png">
+<meta property="og:updated_time" content="2018-09-16T14:39:23.244Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&#39;git_mannual&#39;">
-<meta name="twitter:description" content="git常用命令及使用方法 作为一名计算机相关的人士，如果不知道git为何物，那就有些不应该了。Git是目前世界上最先进的分布式版本控制系统（没有之一）。它和其他版本控制系统的主要差别在于Git只关心文件数据的整体是否发生变化，而大多数版本其他系统只关心文件内容的具体差异，这类系统（CVS，Subversion，Perforce，Bazaar 等等）每次记录有哪些文件作了更新，以及都更新了哪些行的什">
+<meta name="twitter:title" content="git主要操作">
+<meta name="twitter:description" content="git常用命令及使用方法    作为一名计算机相关的人士，如果不知道git为何物，那就有些不应该了。Git是目前世界上最先进的分布式版本控制系统（没有之一）。它和其他版本控制系统的主要差别在于Git只关心文件数据的整体是否发生变化，而大多数版本其他系统只关心文件内容的具体差异，这类系统（CVS，Subversion，Perforce，Bazaar 等等）每次记录有哪些文件作了更新，以及都更新了哪些">
+<meta name="twitter:image" content="https://i.loli.net/2018/09/16/5b9e5df92ca84.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,10 +77,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-git-mannual" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-git主要操作" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/09/16/git-mannual/" class="article-date">
-  <time datetime="2018-09-16T03:11:39.000Z" itemprop="datePublished">2018-09-16</time>
+    <a href="/2018/09/16/git主要操作/" class="article-date">
+  <time datetime="2018-09-16T14:39:09.000Z" itemprop="datePublished">2018-09-16</time>
 </a>
     
   </div>
@@ -78,7 +91,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      &#39;git_mannual&#39;
+      git主要操作
     </h1>
   
 
@@ -87,7 +100,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="git常用命令及使用方法"><a href="#git常用命令及使用方法" class="headerlink" title="git常用命令及使用方法"></a>git常用命令及使用方法</h1><hr>
-<p>作为一名计算机相关的人士，如果不知道git为何物，那就有些不应该了。Git是目前世界上最先进的分布式版本控制系统（没有之一）。它和其他版本控制系统的主要差别在于Git只关心文件数据的整体是否发生变化，而大多数版本其他系统只关心文件内容的具体差异，这类系统（CVS，Subversion，Perforce，Bazaar 等等）每次记录有哪些文件作了更新，以及都更新了哪些行的什么内容。Git另一个比较好的地方在于绝大多数操作都可以在本地执行，而每个本地都可以从服务器获取一份完整的仓库代码，而且在没网的时候仍然可以修改和使用大部分命令，在方便的时候再跟服务器进行同步，这样可以更好的实现多人联合编程。我们可以通过  git help/git –help/ man git 来查看git的一些最常用的命令。那么git都有哪些常用且非常重要的命令呢？现在我们来一起学习一下。</p>
+<p>   作为一名计算机相关的人士，如果不知道git为何物，那就有些不应该了。Git是目前世界上最先进的分布式版本控制系统（没有之一）。它和其他版本控制系统的主要差别在于Git只关心文件数据的整体是否发生变化，而大多数版本其他系统只关心文件内容的具体差异，这类系统（CVS，Subversion，Perforce，Bazaar 等等）每次记录有哪些文件作了更新，以及都更新了哪些行的什么内容。Git另一个比较好的地方在于绝大多数操作都可以在本地执行，而每个本地都可以从服务器获取一份完整的仓库代码，而且在没网的时候仍然可以修改和使用大部分命令，在方便的时候再跟服务器进行同步，这样可以更好的实现多人联合编程。我们可以通过  git help/git –help/ man git 来查看git的一些最常用的命令。那么git都有哪些常用且非常重要的命令呢？现在我们来一起学习一下。</p>
 <h2 id="1、git初始化命令"><a href="#1、git初始化命令" class="headerlink" title="1、git初始化命令"></a>1、git初始化命令</h2><blockquote>
 <ul>
 <li>git init<br>   在本地新建一个repo,进入一个项目目录,执行git init,会初始化一个repo,并在当前文件夹下创建一个.git文件夹.</li>
@@ -193,11 +206,32 @@
 <li>git reset<br>将当前的工作目录完全回滚到指定的版本号，假设如下图，我们有A-G五次提交的版本，其中C的版本号是 bbaf6fb5060b4875b18ff9ff637ce118256d6f20，我们执行了’git reset bbaf6fb5060b4875b18ff9ff637ce118256d6f20’那么结果就只剩下了A-C三个提交的版本</li>
 </ul>
 </blockquote>
+<hr>
+<p>学习完了git的各种命令与操作之后，我们可以来具体试验一下git使用的步骤</p>
+<h2 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h2><p>首先我们肯定要安装git，前往官方网站下载<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git for windows</a>，这里要注意有可能会出现无法下载的情况，可以想办法挂个代理解决。<br>安装之后再每个目录下右键就会出现GIT BASH HERE的选项，或者直接搜索git允许也可。<br><img src="https://i.loli.net/2018/09/16/5b9e5df92ca84.png" alt="这里写图片描述"></p>
+<p>##2、使用</p>
+<h3 id="（1）初始化git仓库"><a href="#（1）初始化git仓库" class="headerlink" title="（1）初始化git仓库"></a>（1）初始化git仓库</h3><p>创建一个你想要新建的git文件夹，在这里用git bash，输入命令git init，即可创建新项目。<br><img src="https://i.loli.net/2018/09/16/5b9e5e85a869b.png" alt="这里写图片描述"></p>
+<p>可以在文件夹中看到一个名称为.git的隐藏文件夹。<br><img src="https://i.loli.net/2018/09/16/5b9e5f6473174.png" alt="这里写图片描述"></p>
+<h3 id="（2）设置用户名和邮箱"><a href="#（2）设置用户名和邮箱" class="headerlink" title="（2）设置用户名和邮箱"></a>（2）设置用户名和邮箱</h3><p>分别输入命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;username&quot;</span><br><span class="line"></span><br><span class="line">$ git config --global user.email &quot;email&quot;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2018/09/16/5b9e6003836ee.png" alt="这里写图片描述"></p>
+<h3 id="（3）克隆项目"><a href="#（3）克隆项目" class="headerlink" title="（3）克隆项目"></a>（3）克隆项目</h3><p>使用git clone来下载一个项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git  clone url( 项目的路径 url )</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://i.loli.net/2018/09/16/5b9e6361b9a9f.png" alt="这里写图片描述"></p>
+<p>可以在文件夹中看到clone的项目<br><img src="https://i.loli.net/2018/09/16/5b9e638d0df99.png" alt="这里写图片描述"></p>
+<h3 id="（4）更新项目"><a href="#（4）更新项目" class="headerlink" title="（4）更新项目"></a>（4）更新项目</h3><p>使用git pull可以更新成最新版本的项目，这里因为仍然是最新的项目，所以pull之后没有变换<br><img src="https://i.loli.net/2018/09/16/5b9e63fb8cec0.png" alt="这里写图片描述"></p>
+<h3 id="（5）将文件添加到本地库"><a href="#（5）将文件添加到本地库" class="headerlink" title="（5）将文件添加到本地库"></a>（5）将文件添加到本地库</h3><p>这里我们将项目中的Readme文件修改，然后添加一个test.txt文件。<br>此时使用 git status也可以查看更新了什么内容，可以看到提示有未追踪的文件。<br><img src="https://i.loli.net/2018/09/16/5b9e65c1ade82.png" alt="这里写图片描述"><br>利用git add可以添加文件到本地仓库。 一般情况下，我们会.或者*来提交。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git add *</span><br><span class="line">$ git add .</span><br></pre></td></tr></table></figure>
+<h3 id="（6）提交文件到本地库"><a href="#（6）提交文件到本地库" class="headerlink" title="（6）提交文件到本地库"></a>（6）提交文件到本地库</h3><p>现在就可以使用git commit来提交文件到本地库了。可以输入commit的信息。<br><img src="https://i.loli.net/2018/09/16/5b9e66fdb2814.png" alt="这里写图片描述"></p>
+<p>通过git log可以查看版本号<br><img src="https://i.loli.net/2018/09/16/5b9e673353d88.png" alt="这里写图片描述"></p>
+<p>也可以通过git reset commit_id来回退版本。</p>
+<h3 id="（7）将文件提交到远程库"><a href="#（7）将文件提交到远程库" class="headerlink" title="（7）将文件提交到远程库"></a>（7）将文件提交到远程库</h3><p>最后，就可以将文件提交到远程库 。这里直接使用git push即可推送到远程分支<br><img src="https://i.loli.net/2018/09/16/5b9e6968cf458.png" alt="这里写图片描述"></p>
+<p>这样我们就可以在网页上看到commit之后的项目了。<br><img src="https://i.loli.net/2018/09/16/5b9e699cdfbf0.png" alt="这里写图片描述"></p>
+<p>好了现在我们就已经完成了git的简单操作了。当然如果是要利用git进行团队协作的话还是有更多东西要学习的。希望以后能进一步了解git的各种用法吧！</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/16/git-mannual/" data-id="cjm4yvmlu0001o87kbxfj92wm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/16/git主要操作/" data-id="cjm4yvmlo0000o87k73ikygyd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -206,19 +240,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/09/16/搭建私有云/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          搭建私有云
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/09/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/09/16/搭建私有云/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">搭建私有云</div>
     </a>
   
 </nav>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-09-16T07:55:40.884Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>搭建私有云</title>
+    <link href="http://yoursite.com/2018/09/16/%E6%90%AD%E5%BB%BA%E7%A7%81%E6%9C%89%E4%BA%91/"/>
+    <id>http://yoursite.com/2018/09/16/搭建私有云/</id>
+    <published>2018-09-16T07:54:19.000Z</published>
+    <updated>2018-09-16T07:55:40.884Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="使用-VirtualBox-让-PC-提供云桌面服务"><a href="#使用-VirtualBox-让-PC-提供云桌面服务" class="headerlink" title="使用 VirtualBox 让 PC 提供云桌面服务"></a>使用 VirtualBox 让 PC 提供云桌面服务</h1><hr><p>最近在学习一门新的课程服务计算，因为要统一用到一个linux的环境，所以第一次作业就布置了让我们利用virtualbox去搭建一个私有云。同时课程也给了我们一个简易的教程——<a href="https://pmlpml.github.io/ServiceComputingOnCloud/ex-install-cloud" target="_blank" rel="noopener">私有云</a>。从教程上来看，似乎搭建的过程并不复杂，只需几十分钟或几小时即可搞定了。但从实际的操作上来看，这个私有云的坑还是挺大的，遇上的问题也是千奇百怪。一开始根据教程，我选择了安装centos7，然而在更新内核时出现了问题，搜索了谷歌之后还是没有找到解决方案。在学习了同学的<a href="https://blog.csdn.net/PeanutDo1t/article/details/82595072" target="_blank" rel="noopener">博客</a>之后发现如果安装ubantu的话可能会更快捷一些，所以这个博客将主要介绍ubantu的私有云搭建方式。日后如果问题得到解决可以更新centos的教程。</p><h2 id="一、实验准备"><a href="#一、实验准备" class="headerlink" title="一、实验准备"></a>一、实验准备</h2><hr><p>1、下载并安装<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">VirtualBox 5.2.18</a><br>2、下载安装 Git 客户端（git bash）<a href="https://gitforwindows.org/" target="_blank" rel="noopener">地址</a><br>3、下载新版本ubantu，这里选用了16.04版本，因为这个版本的功能比较健全，系统也更为稳定，镜像的下载地址为<a href="http://mirrors.melbourne.co.uk/ubuntu-releases/" target="_blank" rel="noopener">desktop镜像</a><br>4、下载下载VirtualBox 5.2.18 拓展包，由于要使用virtualbox的远程桌面功能，必须要用到扩展包。安装步骤可参考<a href="http://www.xitongzu.com/jc/2440.html" target="_blank" rel="noopener">VirtualBox扩展增强包安装教程</a></p><h2 id="二、配置virtualbox"><a href="#二、配置virtualbox" class="headerlink" title="二、配置virtualbox"></a>二、配置virtualbox</h2><hr><p>1、配置 VirtualBox 虚拟机存储位置，避免找不到虚拟机存储位置，特别是消耗启动盘的宝贵空间<br>打开VirtualBox菜单 ：管理 -&gt; 全局设定，常规页面<br>2、创建虚拟机内部虚拟网络，使得 Vbox 内部虚拟机可以通过它，实现虚拟机之间、虚拟机与主机的通讯<br>打开VirtualBox菜单 ：管理 -&gt; 主机网络管理器，创建一块虚拟网卡，网址分配：192.168.100.1<br>3、在主机 windows 命令行窗口输入 ipconfig 就可以看到 VirtualBox Host-Only Network #?: 的网卡<br><img src="https://img-blog.csdn.net/20180914151305405?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGUzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p><h2 id="三、安装ubantu系统"><a href="#三、安装ubantu系统" class="headerlink" title="三、安装ubantu系统"></a>三、安装ubantu系统</h2><hr><p>接下来就要进入正题了，我们要通过虚拟机来安装系统。<br>1、通过新建按钮创建一个虚拟机，注意命名时要以ub开头，这样vb可以自动识别出系统类型，然后设置内存为4GB，创建虚拟硬盘32GB。<br><img src="https://img-blog.csdn.net/20180914150058354?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGUzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>2、创建好后，再打开该虚拟机设置界面，将显存调至64mb，将网卡1设置为NAT，第二块网卡设置为 Host-Only，接口为前面创建的虚拟网卡<br><img src="https://img-blog.csdn.net/20180914151352419?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGUzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>3、这时可以打开虚拟机进行安装。选择之前下载的镜像，之后根据提示一路进行安装，难度不大。</p><h2 id="四、设置虚拟机及宿主机网络"><a href="#四、设置虚拟机及宿主机网络" class="headerlink" title="四、设置虚拟机及宿主机网络"></a>四、设置虚拟机及宿主机网络</h2><hr><p>要使得我们能够远程连接上虚拟机，就必须要进行一些网络设置。<br>1、再设置中进入显示-远程桌面，勾选启用服务器，填写一个服务器端口号（不为3389）如果不勾选的话将不能进行远程桌面。<br><img src="https://img-blog.csdn.net/20180914151456892?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGUzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>2、进入ubantu系统，打开网络设置，选择一个有线连接，手动设置ip为下<br><img src="https://img-blog.csdn.net/20180914150127282?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGUzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>3、在宿主机中打开网络连接，选择之前设置的虚拟网卡，在共享中勾选允许其他网络通过此计算机<br>4、此时在虚拟机中ping之前设置的ip，可以看到是否连通。<br><img src="https://img-blog.csdn.net/20180914150252856?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGUzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p><h2 id="五、登陆远程桌面"><a href="#五、登陆远程桌面" class="headerlink" title="五、登陆远程桌面"></a>五、登陆远程桌面</h2><hr><p>1、打开cmd，输入ipconfig，查找到宿主机在网络中的IP地址。这里是192.168.199.210<br><img src="https://img-blog.csdn.net/20180914174558218?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGUzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>2、打开windows下的远程桌面连接，输入这个IP和之前在VirtualBox中设置的远程桌面服务器端口号（5007），即可连接到远程桌面<br><img src="https://img-blog.csdn.net/20180914174633239?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGUzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p><p>点击确定进入远程桌面<br><img src="https://img-blog.csdn.net/20180914174813202?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGUzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p><h2 id="六、安装ubantu软件"><a href="#六、安装ubantu软件" class="headerlink" title="六、安装ubantu软件"></a>六、安装ubantu软件</h2><hr><p>1、安装谷歌浏览器chrome</p><p>打开终端，依次输入以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/</span><br><span class="line"></span><br><span class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line"> sudo apt-get install google-chrome-stable</span><br><span class="line"></span><br><span class="line">/usr/bin/google-chrome-stable</span><br></pre></td></tr></table></figure></p><p>2、安装搜狗输入法</p><p>1、执行命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install fcitx libssh2-1</span><br></pre></td></tr></table></figure><p>2、接下来我们从搜狗官方下载deb包 ，下载地址在 <a href="http://pinyin.sogou.com/linux/" target="_blank" rel="noopener">http://pinyin.sogou.com/linux/</a> 根据你的系统选择32位或者64位<br>执行命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install fcitx libssh2-1</span><br></pre></td></tr></table></figure><p>3、 安装下载好的安装包命令<br> 4、系统设置&gt;语言支持&gt;键盘输入方式系统<br>然后选择 fcitx 项<br> 5、重启系统<br><code>sudo dpkg -i sougou_64.deb</code></p><p>这样一来，我们便可以在任何地方自由使用自己搭建好的虚拟机。如果你有多个虚拟机的需求，就可以把刚才的虚拟机设置为base，再进行克隆即可。这里建议使用链接克隆，这样的好处是可以仍旧使用原来系统的磁盘，省去了宝贵了磁盘空间。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;使用-VirtualBox-让-PC-提供云桌面服务&quot;&gt;&lt;a href=&quot;#使用-VirtualBox-让-PC-提供云桌面服务&quot; class=&quot;headerlink&quot; title=&quot;使用 VirtualBox 让 PC 提供云桌面服务&quot;&gt;&lt;/a&gt;使用 Virtu
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;git_mannual&#39;</title>
+    <link href="http://yoursite.com/2018/09/16/git-mannual/"/>
+    <id>http://yoursite.com/2018/09/16/git-mannual/</id>
+    <published>2018-09-16T03:11:39.000Z</published>
+    <updated>2018-09-16T03:16:30.823Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="git常用命令及使用方法"><a href="#git常用命令及使用方法" class="headerlink" title="git常用命令及使用方法"></a>git常用命令及使用方法</h1><hr><p>作为一名计算机相关的人士，如果不知道git为何物，那就有些不应该了。Git是目前世界上最先进的分布式版本控制系统（没有之一）。它和其他版本控制系统的主要差别在于Git只关心文件数据的整体是否发生变化，而大多数版本其他系统只关心文件内容的具体差异，这类系统（CVS，Subversion，Perforce，Bazaar 等等）每次记录有哪些文件作了更新，以及都更新了哪些行的什么内容。Git另一个比较好的地方在于绝大多数操作都可以在本地执行，而每个本地都可以从服务器获取一份完整的仓库代码，而且在没网的时候仍然可以修改和使用大部分命令，在方便的时候再跟服务器进行同步，这样可以更好的实现多人联合编程。我们可以通过  git help/git –help/ man git 来查看git的一些最常用的命令。那么git都有哪些常用且非常重要的命令呢？现在我们来一起学习一下。</p><h2 id="1、git初始化命令"><a href="#1、git初始化命令" class="headerlink" title="1、git初始化命令"></a>1、git初始化命令</h2><blockquote><ul><li>git init<br>   在本地新建一个repo,进入一个项目目录,执行git init,会初始化一个repo,并在当前文件夹下创建一个.git文件夹.</li><li>git clone<br>获取一个url对应的远程Git repo, 创建一个local copy.一般的格式是git clone [url]，clone下来的repo会以url最后一个斜线后面的名称命名,创建一个文件夹,如果想要指定特定的名称,可以git clone [url] newname指定.</li></ul></blockquote><h2 id="2、git分支命令"><a href="#2、git分支命令" class="headerlink" title="2、git分支命令"></a>2、git分支命令</h2><blockquote><ul><li>git branch可以用来列出分支,创建分支和删除分支.</li><li>git branch -v可以看见每一个分支的最后一次提交.</li><li>git branch: 列出本地所有分支,当前分支会被星号标示出.</li><li>git branch (branchname): 创建一个新的分支(当你用这种方式创建分支的时候,分支是基于你的上一次提交建立的).</li><li>git branch -d (branchname): 删除一个分支.<br>删除remote的分支:</li><li>git push (remote-name) :(branch-name): delete a remote branch.<br>这个是因为完整的命令形式是:</li><li>git push remote-name local-branch:remote-branch<br>而这里local-branch的部分为空,就意味着删除了remote-branch</li></ul></blockquote><h2 id="3、git远程仓库命令"><a href="#3、git远程仓库命令" class="headerlink" title="3、git远程仓库命令"></a>3、git远程仓库命令</h2><blockquote><ul><li>git clone  检出仓库</li></ul></blockquote><blockquote><ul><li>git remote -v 查看远程仓库</li></ul></blockquote><blockquote><ul><li>git remote add [name] [url] 添加远程仓库</li></ul></blockquote><blockquote><ul><li>git remote rm [name] 删除远程仓库</li></ul></blockquote><blockquote><ul><li>git pull<br>拉取远程仓库pull == fetch + merge FETCH_HEAD.  git pull会首先执行git fetch,然后执行git merge,把取来的分支的head merge到当前分支.这个merge操作会产生一个新的commit.     如果使用–rebase参数,它会执行git rebase来取代原来的git merge.</li></ul></blockquote><blockquote><ul><li>git push<br>推送远程仓库.将会把当前分支merge到alias上的[branch]分支.如果分支已经存在,将会更新,如果不存在,将会添加这个分支.<br>  如果有多个人向同一个remote repo push代码, Git会首先在你试图push的分支上运行git log,检查它的历史中是否能看到server上的branch现在的tip,如果本地历史中不能看到server的tip,说明本地的代码不是最新的,Git会拒绝你的push,让你先fetch,merge,之后再push,这样就保证了所有人的改动都会被考虑进来.</li></ul></blockquote><blockquote><ul><li>git fetch<br>   可以git fetch [alias]取某一个远程repo,也可以git fetch –all取到全部repo<br>   fetch将会取到所有你本地没有的数据,所有取下来的分支可以被叫做remote branches,它们和本地分支一样(可以看diff,log等,也可以merge到其他分支),但是Git不允许你checkout到它们.</li><li>git checkout (branchname)切换到一个分支.git checkout -b (branchname): 创建并切换到新的分支.<br>  这个命令是将git branch newbranch和git checkout newbranch合在一起的结果.</li></ul></blockquote><blockquote><ul><li>git merge<br>  把一个分支merge进当前的分支.<br>  git merge [alias]/[branch]<br>  把远程分支merge到当前分支.</li></ul></blockquote><h2 id="4、git版本操作相关命令"><a href="#4、git版本操作相关命令" class="headerlink" title="4、git版本操作相关命令"></a>4、git版本操作相关命令</h2><blockquote><ul><li>查看版本：$ git tag</li></ul></blockquote><blockquote><ul><li>创建版本：$ git tag [name]</li></ul></blockquote><blockquote><ul><li>删除版本：$ git tag -d [name]</li></ul></blockquote><blockquote><ul><li>查看远程版本：$ git tag -r</li></ul></blockquote><h2 id="5、git查看日志版本操作"><a href="#5、git查看日志版本操作" class="headerlink" title="5、git查看日志版本操作"></a>5、git查看日志版本操作</h2><blockquote><ul><li>git log 命令列出历史提交记录</li><li>git log –oneline 查看历史记录的简洁的版本</li><li>git log –oneline –graph 查看历史中什么时候出现了分支、合并</li></ul></blockquote><h2 id="6、其他操作"><a href="#6、其他操作" class="headerlink" title="6、其他操作"></a>6、其他操作</h2><blockquote><ul><li>git rebase<br>   rebase不会产生合并的提交,它会将本地的所有提交临时保存为补丁(patch),放在”.git/rebase”目录中,然后将当前分支更新到最新的分支尖端,最后把保存的补丁应用到分支上.<br>   rebase的过程中,也许会出现冲突,Git会停止rebase并让你解决冲突,在解决完冲突之后,用git add去更新这些内容,然后无需执行commit,只需要:<br>   git rebase –continue就会继续打余下的补丁.<br>   git rebase –abort将会终止rebase,当前分支将会回到rebase之前的状态.</li></ul></blockquote><blockquote><ul><li>git reflog<br>   git reflog是对reflog进行管理的命令,reflog是git用来记录引用变化的一种机制,比如记录分支的变化或者是HEAD引用的变化.<br>   当git reflog不指定引用的时候,默认列出HEAD的reflog.<br>   HEAD@{0}代表HEAD当前的值,HEAD@{3}代表HEAD在3次变化之前的值.<br>   git会将变化记录到HEAD对应的reflog文件中,其路径为.git/logs/HEAD, 分支的reflog文件都放在.git/logs/refs目录下的子目录中.</li></ul></blockquote><blockquote><ul><li>git config<br>利用这个命令可以新增、更改Git的各种设置，例如’git config branch.master.remote origin’就将master的远程版本库设置为别名叫做origin版本库，后面在技巧篇会利用这个命令个性化设置你的Git，为你打造独一无二的 Git</li></ul></blockquote><blockquote><ul><li>git reset<br>将当前的工作目录完全回滚到指定的版本号，假设如下图，我们有A-G五次提交的版本，其中C的版本号是 bbaf6fb5060b4875b18ff9ff637ce118256d6f20，我们执行了’git reset bbaf6fb5060b4875b18ff9ff637ce118256d6f20’那么结果就只剩下了A-C三个提交的版本</li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;git常用命令及使用方法&quot;&gt;&lt;a href=&quot;#git常用命令及使用方法&quot; class=&quot;headerlink&quot; title=&quot;git常用命令及使用方法&quot;&gt;&lt;/a&gt;git常用命令及使用方法&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;作为一名计算机相关的人士，如果不知道git为何物，
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2018/09/16/hello-world/"/>
+    <id>http://yoursite.com/2018/09/16/hello-world/</id>
+    <published>2018-09-15T17:57:32.466Z</published>
+    <updated>2018-09-15T17:57:32.467Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

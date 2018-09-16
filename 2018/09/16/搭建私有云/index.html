@@ -5,15 +5,29 @@
   
 
   
-  <title>Hexo</title>
+  <title>搭建私有云 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="使用 VirtualBox 让 PC 提供云桌面服务 最近在学习一门新的课程服务计算，因为要统一用到一个linux的环境，所以第一次作业就布置了让我们利用virtualbox去搭建一个私有云。同时课程也给了我们一个简易的教程——私有云。从教程上来看，似乎搭建的过程并不复杂，只需几十分钟或几小时即可搞定了。但从实际的操作上来看，这个私有云的坑还是挺大的，遇上的问题也是千奇百怪。一开始根据教程，我选择">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建私有云">
+<meta property="og:url" content="http://yoursite.com/2018/09/16/搭建私有云/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="使用 VirtualBox 让 PC 提供云桌面服务 最近在学习一门新的课程服务计算，因为要统一用到一个linux的环境，所以第一次作业就布置了让我们利用virtualbox去搭建一个私有云。同时课程也给了我们一个简易的教程——私有云。从教程上来看，似乎搭建的过程并不复杂，只需几十分钟或几小时即可搞定了。但从实际的操作上来看，这个私有云的坑还是挺大的，遇上的问题也是千奇百怪。一开始根据教程，我选择">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://img-blog.csdn.net/20180914151305405?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGUzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180914150058354?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGUzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180914151352419?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGUzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180914151456892?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGUzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180914150127282?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGUzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180914150252856?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGUzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180914174558218?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGUzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180914174633239?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGUzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180914174813202?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGUzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2018-09-16T07:55:40.884Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="搭建私有云">
+<meta name="twitter:description" content="使用 VirtualBox 让 PC 提供云桌面服务 最近在学习一门新的课程服务计算，因为要统一用到一个linux的环境，所以第一次作业就布置了让我们利用virtualbox去搭建一个私有云。同时课程也给了我们一个简易的教程——私有云。从教程上来看，似乎搭建的过程并不复杂，只需几十分钟或几小时即可搞定了。但从实际的操作上来看，这个私有云的坑还是挺大的，遇上的问题也是千奇百怪。一开始根据教程，我选择">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180914151305405?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pcmFjbGUzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,9 +74,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-搭建私有云" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-搭建私有云" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/09/16/搭建私有云/" class="article-date">
   <time datetime="2018-09-16T07:54:19.000Z" itemprop="datePublished">2018-09-16</time>
@@ -75,8 +87,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/16/搭建私有云/">搭建私有云</a>
+    <h1 class="article-title" itemprop="name">
+      搭建私有云
     </h1>
   
 
@@ -117,199 +129,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-git-mannual" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/09/16/git-mannual/" class="article-date">
-  <time datetime="2018-09-16T03:11:39.000Z" itemprop="datePublished">2018-09-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/16/git-mannual/">&#39;git_mannual&#39;</a>
-    </h1>
+    <a href="/2018/09/16/git-mannual/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">&#39;git_mannual&#39;</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="git常用命令及使用方法"><a href="#git常用命令及使用方法" class="headerlink" title="git常用命令及使用方法"></a>git常用命令及使用方法</h1><hr>
-<p>作为一名计算机相关的人士，如果不知道git为何物，那就有些不应该了。Git是目前世界上最先进的分布式版本控制系统（没有之一）。它和其他版本控制系统的主要差别在于Git只关心文件数据的整体是否发生变化，而大多数版本其他系统只关心文件内容的具体差异，这类系统（CVS，Subversion，Perforce，Bazaar 等等）每次记录有哪些文件作了更新，以及都更新了哪些行的什么内容。Git另一个比较好的地方在于绝大多数操作都可以在本地执行，而每个本地都可以从服务器获取一份完整的仓库代码，而且在没网的时候仍然可以修改和使用大部分命令，在方便的时候再跟服务器进行同步，这样可以更好的实现多人联合编程。我们可以通过  git help/git –help/ man git 来查看git的一些最常用的命令。那么git都有哪些常用且非常重要的命令呢？现在我们来一起学习一下。</p>
-<h2 id="1、git初始化命令"><a href="#1、git初始化命令" class="headerlink" title="1、git初始化命令"></a>1、git初始化命令</h2><blockquote>
-<ul>
-<li>git init<br>   在本地新建一个repo,进入一个项目目录,执行git init,会初始化一个repo,并在当前文件夹下创建一个.git文件夹.</li>
-<li>git clone<br>获取一个url对应的远程Git repo, 创建一个local copy.一般的格式是git clone [url]，clone下来的repo会以url最后一个斜线后面的名称命名,创建一个文件夹,如果想要指定特定的名称,可以git clone [url] newname指定.</li>
-</ul>
-</blockquote>
-<h2 id="2、git分支命令"><a href="#2、git分支命令" class="headerlink" title="2、git分支命令"></a>2、git分支命令</h2><blockquote>
-<ul>
-<li>git branch可以用来列出分支,创建分支和删除分支.</li>
-<li>git branch -v可以看见每一个分支的最后一次提交.</li>
-<li>git branch: 列出本地所有分支,当前分支会被星号标示出.</li>
-<li>git branch (branchname): 创建一个新的分支(当你用这种方式创建分支的时候,分支是基于你的上一次提交建立的).</li>
-<li>git branch -d (branchname): 删除一个分支.<br>删除remote的分支:</li>
-<li>git push (remote-name) :(branch-name): delete a remote branch.<br>这个是因为完整的命令形式是:</li>
-<li>git push remote-name local-branch:remote-branch<br>而这里local-branch的部分为空,就意味着删除了remote-branch</li>
-</ul>
-</blockquote>
-<h2 id="3、git远程仓库命令"><a href="#3、git远程仓库命令" class="headerlink" title="3、git远程仓库命令"></a>3、git远程仓库命令</h2><blockquote>
-<ul>
-<li>git clone  检出仓库</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>git remote -v 查看远程仓库</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>git remote add [name] [url] 添加远程仓库</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>git remote rm [name] 删除远程仓库</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>git pull<br>拉取远程仓库pull == fetch + merge FETCH_HEAD.  git pull会首先执行git fetch,然后执行git merge,把取来的分支的head merge到当前分支.这个merge操作会产生一个新的commit.     如果使用–rebase参数,它会执行git rebase来取代原来的git merge.</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>git push<br>推送远程仓库.将会把当前分支merge到alias上的[branch]分支.如果分支已经存在,将会更新,如果不存在,将会添加这个分支.<br>  如果有多个人向同一个remote repo push代码, Git会首先在你试图push的分支上运行git log,检查它的历史中是否能看到server上的branch现在的tip,如果本地历史中不能看到server的tip,说明本地的代码不是最新的,Git会拒绝你的push,让你先fetch,merge,之后再push,这样就保证了所有人的改动都会被考虑进来.</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>git fetch<br>   可以git fetch [alias]取某一个远程repo,也可以git fetch –all取到全部repo<br>   fetch将会取到所有你本地没有的数据,所有取下来的分支可以被叫做remote branches,它们和本地分支一样(可以看diff,log等,也可以merge到其他分支),但是Git不允许你checkout到它们.</li>
-<li>git checkout (branchname)切换到一个分支.git checkout -b (branchname): 创建并切换到新的分支.<br>  这个命令是将git branch newbranch和git checkout newbranch合在一起的结果.</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>git merge<br>  把一个分支merge进当前的分支.<br>  git merge [alias]/[branch]<br>  把远程分支merge到当前分支.</li>
-</ul>
-</blockquote>
-<h2 id="4、git版本操作相关命令"><a href="#4、git版本操作相关命令" class="headerlink" title="4、git版本操作相关命令"></a>4、git版本操作相关命令</h2><blockquote>
-<ul>
-<li>查看版本：$ git tag</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>创建版本：$ git tag [name]</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>删除版本：$ git tag -d [name]</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>查看远程版本：$ git tag -r</li>
-</ul>
-</blockquote>
-<h2 id="5、git查看日志版本操作"><a href="#5、git查看日志版本操作" class="headerlink" title="5、git查看日志版本操作"></a>5、git查看日志版本操作</h2><blockquote>
-<ul>
-<li>git log 命令列出历史提交记录</li>
-<li>git log –oneline 查看历史记录的简洁的版本</li>
-<li>git log –oneline –graph 查看历史中什么时候出现了分支、合并</li>
-</ul>
-</blockquote>
-<h2 id="6、其他操作"><a href="#6、其他操作" class="headerlink" title="6、其他操作"></a>6、其他操作</h2><blockquote>
-<ul>
-<li>git rebase<br>   rebase不会产生合并的提交,它会将本地的所有提交临时保存为补丁(patch),放在”.git/rebase”目录中,然后将当前分支更新到最新的分支尖端,最后把保存的补丁应用到分支上.<br>   rebase的过程中,也许会出现冲突,Git会停止rebase并让你解决冲突,在解决完冲突之后,用git add去更新这些内容,然后无需执行commit,只需要:<br>   git rebase –continue就会继续打余下的补丁.<br>   git rebase –abort将会终止rebase,当前分支将会回到rebase之前的状态.</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>git reflog<br>   git reflog是对reflog进行管理的命令,reflog是git用来记录引用变化的一种机制,比如记录分支的变化或者是HEAD引用的变化.<br>   当git reflog不指定引用的时候,默认列出HEAD的reflog.<br>   HEAD@{0}代表HEAD当前的值,HEAD@{3}代表HEAD在3次变化之前的值.<br>   git会将变化记录到HEAD对应的reflog文件中,其路径为.git/logs/HEAD, 分支的reflog文件都放在.git/logs/refs目录下的子目录中.</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>git config<br>利用这个命令可以新增、更改Git的各种设置，例如’git config branch.master.remote origin’就将master的远程版本库设置为别名叫做origin版本库，后面在技巧篇会利用这个命令个性化设置你的Git，为你打造独一无二的 Git</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>git reset<br>将当前的工作目录完全回滚到指定的版本号，假设如下图，我们有A-G五次提交的版本，其中C的版本号是 bbaf6fb5060b4875b18ff9ff637ce118256d6f20，我们执行了’git reset bbaf6fb5060b4875b18ff9ff637ce118256d6f20’那么结果就只剩下了A-C三个提交的版本</li>
-</ul>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/16/git-mannual/" data-id="cjm4khft80000307koc3k704b" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/09/16/hello-world/" class="article-date">
-  <time datetime="2018-09-15T17:57:32.466Z" itemprop="datePublished">2018-09-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/16/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/16/hello-world/" data-id="cjm4khftj0002307k6slhbm0w" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         

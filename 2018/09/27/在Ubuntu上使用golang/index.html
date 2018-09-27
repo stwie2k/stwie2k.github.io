@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在Ubuntu上使用golang Go语言是一门强类型的通用编程语言。它的基础语法与C语言很类似，但对于变量的声明有所不同，也对其他的一些优秀编程语言有所借鉴。另外，Go语言支持垃圾回收。 与C++相比，Go语言并不包括如异常处理、继承、泛型、断言、虚函数等功能，但增加了 Slice 型、并发、管道、垃圾回收、接口（Interface）等特性的语言级支持。 Go语言对并发编程的支持是天生的、自然的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2018/09/27/在Ubuntu上使用golang/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="在Ubuntu上使用golang Go语言是一门强类型的通用编程语言。它的基础语法与C语言很类似，但对于变量的声明有所不同，也对其他的一些优秀编程语言有所借鉴。另外，Go语言支持垃圾回收。 与C++相比，Go语言并不包括如异常处理、继承、泛型、断言、虚函数等功能，但增加了 Slice 型、并发、管道、垃圾回收、接口（Interface）等特性的语言级支持。 Go语言对并发编程的支持是天生的、自然的">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://i.loli.net/2018/09/24/5ba8b15eed940.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/24/5ba8b231c3b54.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/24/5ba8b7a4200f5.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/24/5ba8b80b811ac.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/24/5ba8eb831470d.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/24/5ba8edf7c8dd5.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/24/5ba8ee1e8f013.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/24/5ba8fddbb9953.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/24/5ba8fddbb9953.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/27/5bacf69d2ef5e.png">
+<meta property="og:updated_time" content="2018-09-27T15:30:46.499Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="在Ubuntu上使用golang Go语言是一门强类型的通用编程语言。它的基础语法与C语言很类似，但对于变量的声明有所不同，也对其他的一些优秀编程语言有所借鉴。另外，Go语言支持垃圾回收。 与C++相比，Go语言并不包括如异常处理、继承、泛型、断言、虚函数等功能，但增加了 Slice 型、并发、管道、垃圾回收、接口（Interface）等特性的语言级支持。 Go语言对并发编程的支持是天生的、自然的">
+<meta name="twitter:image" content="https://i.loli.net/2018/09/24/5ba8b15eed940.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-在Ubuntu上使用golang" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/27/在Ubuntu上使用golang/" class="article-date">
+  <time datetime="2018-09-27T15:32:01.128Z" itemprop="datePublished">2018-09-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="在Ubuntu上使用golang"><a href="#在Ubuntu上使用golang" class="headerlink" title="在Ubuntu上使用golang"></a>在Ubuntu上使用golang</h1><hr>
+<p>Go语言是一门强类型的通用编程语言。它的基础语法与C语言很类似，但对于变量的声明有所不同，也对其他的一些优秀编程语言有所借鉴。另外，Go语言支持垃圾回收。</p>
+<p>与C++相比，Go语言并不包括如异常处理、继承、泛型、断言、虚函数等功能，但增加了 Slice 型、并发、管道、垃圾回收、接口（Interface）等特性的语言级支持。</p>
+<p>Go语言对并发编程的支持是天生的、自然的和高效的。Go语言为此专门创造出了一个关键字“go”。使用这个关键字，我们就可以很容易的使一个函数被并发的执行。</p>
+<p>Go是一门以软件工程为目的的语言设计:</p>
+<ul>
+<li>快速编译</li>
+<li>严格的依赖管理</li>
+<li>代码风格的强一致性</li>
+<li>偏向组合而不是继承</li>
+</ul>
+<p>由于go语言的种种特点，其成为了云计算和服务计算开发的首选。所以借此机会，我们也学习了go语言在linux系统下的安装编写，在这里逐一介绍。</p>
+<hr>
+<h2 id="一、安装vscode"><a href="#一、安装vscode" class="headerlink" title="一、安装vscode"></a>一、安装vscode</h2><p>作为一款轻量级的文本编辑器，vscode一出世就引发了许多人的关注。事实上，在使用了多款编辑器之后，我发觉vscode的速度在其中是数一数二，因此这次在linux上也选择其作为go语言开发的平台。<br>要安装vscode，首先要安装umake。打开终端，使用下列命令，通过官方PPA来安装Ubuntu Make：</p>
+<pre><code>sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
+sudo apt-get update
+sudo apt-get install ubuntu-make
+</code></pre><p>之后再通过umake来vscode</p>
+<pre><code>umake web visual-studio-code
+</code></pre><p>但在这一步却出现报错<br><img src="https://i.loli.net/2018/09/24/5ba8b15eed940.png" alt="此处输入图片的描述"></p>
+<p>提示架构冲突。索性直接去微软官网下载deb安装，简单快捷。这样我们就可以直接打开vscode了。<br><img src="https://i.loli.net/2018/09/24/5ba8b231c3b54.png" alt="此处输入图片的描述"></p>
+<h2 id="二、安装Golang"><a href="#二、安装Golang" class="headerlink" title="二、安装Golang"></a>二、安装Golang</h2><p>1、下载安装</p>
+<ul>
+<li>终端输入命令</li>
+</ul>
+<pre><code>sudo apt-get install golang
+</code></pre><ul>
+<li>查看go版本<br><img src="https://i.loli.net/2018/09/24/5ba8b7a4200f5.png" alt="此处输入图片的描述"></li>
+</ul>
+<p>2、环境配置</p>
+<ul>
+<li>查看环境变量<br><img src="https://i.loli.net/2018/09/24/5ba8b80b811ac.png" alt="此处输入图片的描述"></li>
+</ul>
+<p>默认的时候，GOPATH是没有配置好的，那么我们怎么修改这些环境变量呢</p>
+<p>首先，我们可以任选一个位置建一个文件夹，比如</p>
+<pre><code>mkdir /home/kloijm30/go
+</code></pre><p>之后打开配置文件</p>
+<pre><code>sudo gedit /etc/profile 
+</code></pre><p>在最后添加export GOPATH=/home/kloijm30/go<br>以及export PATH=$PATH:/home/kloijm30/go/bin</p>
+<h2 id="三、创建程序并编译"><a href="#三、创建程序并编译" class="headerlink" title="三、创建程序并编译"></a>三、创建程序并编译</h2><p>1、编译并运行简单的程序，首先要选择包路径（我们在这里使用 github.com/user/hello），并在你的工作空间内创建相应的包目录：</p>
+<pre><code>$ mkdir $GOPATH/src/github.com/user/hello
+</code></pre><p>然后用vscode新建文档hello.go</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    fmt.Printf(&quot;Hello, world.\n&quot;)
+}
+</code></pre><p>然后直接在vscode中打开终端，进入目录输入</p>
+<pre><code>go run hello.go
+</code></pre><p>这样就可以看到运行结果了</p>
+<p><img src="https://i.loli.net/2018/09/24/5ba8eb831470d.png" alt="此处输入图片的描述"></p>
+<p>2、构建安装程序<br>在任何位置输入命令</p>
+<pre><code>$ go install github.com/user/hello
+</code></pre><p>这样在bin文件夹中就可以看到名为hello的二进制文件了<br><img src="https://i.loli.net/2018/09/24/5ba8edf7c8dd5.png" alt="此处输入图片的描述"></p>
+<p>之后我们就可以直接输入二进制文件名来运行了<br><img src="https://i.loli.net/2018/09/24/5ba8ee1e8f013.png" alt="此处输入图片的描述"></p>
+<h2 id="四、编写一个Golang库"><a href="#四、编写一个Golang库" class="headerlink" title="四、编写一个Golang库"></a>四、编写一个Golang库</h2><p>1、先选择包路径（我们将使用 github.com/user/stringutil） 并创建包目录：</p>
+<pre><code>$ mkdir $GOPATH/src/github.com/user/stringutil
+</code></pre><p>2、在该目录中创建名为 reverse.go 的文件，内容如下：</p>
+<pre><code>// stringutil 包含有用于处理字符串的工具函数。
+package stringutil
+
+// Reverse 将其实参字符串以符文为单位左右反转。
+func Reverse(s string) string {
+    r := []rune(s)
+    for i, j := 0, len(r)-1; i &lt; len(r)/2; i, j = i+1, j-1 {
+        r[i], r[j] = r[j], r[i]
+    }
+    return string(r)
+}
+</code></pre><p>3、修改hello.go文件为</p>
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+
+    &quot;github.com/user/stringutil&quot;
+)
+
+func main() {
+    fmt.Printf(stringutil.Reverse(&quot;!oG ,olleH&quot;))
+}
+</code></pre><p>4、再重新安装hello.go</p>
+<pre><code>go install github.com/user/hello
+</code></pre><p>此时运行hello<br><img src="https://i.loli.net/2018/09/24/5ba8fddbb9953.png" alt="此处输入图片的描述"></p>
+<p>输出了逆向的字符，说明自己的库使用成功。</p>
+<p>此时的空间格局为<br><img src="https://i.loli.net/2018/09/24/5ba8fddbb9953.png" alt="此处输入图片的描述"></p>
+<h2 id="五、Go语言测试"><a href="#五、Go语言测试" class="headerlink" title="五、Go语言测试"></a>五、Go语言测试</h2><p>Go拥有一个轻量级的测试框架，它由 go test 命令和 testing 包构成。</p>
+<p>你可以通过创建一个名字以 _test.go 结尾的，包含名为 TestXXX 且签名为 func (t *testing.T) 函数的文件来编写测试。 </p>
+<p>在 $GOPATH/src/github.com/user/stringutil 中创建reverse_test.go </p>
+<pre><code>package stringutil
+
+import &quot;testing&quot;
+
+func TestReverse(t *testing.T) {
+    cases := []struct {
+        in, want string
+    }{
+        {&quot;Hello, world&quot;, &quot;dlrow ,olleH&quot;},
+        {&quot;Hello, 世界&quot;, &quot;界世 ,olleH&quot;},
+        {&quot;&quot;, &quot;&quot;},
+    }
+    for _, c := range cases {
+        got := Reverse(c.in)
+        if got != c.want {
+            t.Errorf(&quot;Reverse(%q) == %q, want %q&quot;, c.in, got, c.want)
+        }
+    }
+}
+</code></pre><p>   用go test测试<br>   <img src="https://i.loli.net/2018/09/27/5bacf69d2ef5e.png" alt="此处输入图片的描述"></p>
+<p>   这样便表示测试成功了。</p>
+<p>  <a href="https://i.loli.net/2018/09/24/5ba8fddbb9953.png" target="_blank" rel="noopener">8</a>: <a href="https://i.loli.net/2018/09/24/5ba8fd957319b7]" target="_blank" rel="noopener">https://i.loli.net/2018/09/24/5ba8fd957319b7]</a>: <a href="https://i.loli.net/2018/09/24/5ba8ee1e8f013.png" target="_blank" rel="noopener">https://i.loli.net/2018/09/24/5ba8ee1e8f013.png</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/27/在Ubuntu上使用golang/" data-id="cjmkqmefx0002h07kkntq7xyl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/09/16/git主要操作/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">git主要操作</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/09/27/在Ubuntu上使用golang/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/16/git主要操作/">git主要操作</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/16/搭建私有云/">搭建私有云</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/16/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
